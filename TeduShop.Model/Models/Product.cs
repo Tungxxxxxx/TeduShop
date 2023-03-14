@@ -30,5 +30,7 @@ namespace TeduShop.Model.Models
         public bool? HomeFlag { get; set; }
         public bool? HotFlag { get; set; }
         public int? ViewCount { get; set; }
+        [ForeignKey("ID")]
+        public virtual OrderDetail OrderDetail { get; set; }
     }
 }
