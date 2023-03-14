@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TeduShop.Model.Models
@@ -11,11 +10,14 @@ namespace TeduShop.Model.Models
         public int PostID { get; set; }
 
         [Key]
+        [Column(TypeName = "varchar")]
+        [MaxLength(50)]
         public int TagID { get; set; }
 
         [ForeignKey("PostID")]
         public virtual Post Post { get; set; }
 
-        public virtual IEnumerable<Tag> Tags { get; set; }
+        [ForeignKey("TagID")]
+        public virtual Tag Tag { get; set; }
     }
 }

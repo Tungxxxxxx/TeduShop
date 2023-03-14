@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TeduShop.Model.Models
@@ -18,6 +17,7 @@ namespace TeduShop.Model.Models
         [ForeignKey("OrderID")]
         public virtual Order Order { get; set; }
 
-        public virtual IEnumerable<Product> Products { get; set; }
+        [ForeignKey("ProductID")]
+        public virtual Product Product { get; set; }
     }
 }

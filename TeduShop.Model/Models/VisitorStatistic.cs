@@ -10,9 +10,10 @@ namespace TeduShop.Model.Models
         [Key]
         public int ID { get; set; }
 
+        [Required]
         public DateTime VisitedDate { get; set; }
 
-        [Required]
+        [MaxLength(50)]
         public string IPAddress { get; set; }
     }
 }

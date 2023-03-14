@@ -8,14 +8,13 @@ namespace TeduShop.Model.Models
     public class Tag
     {
         [Key]
+        [MaxLength(50)]
         public int ID { get; set; }
-
+        [Required]
+        [MaxLength(256)]
         public string Name { get; set; }
+        [Required]
+        [MaxLength(256)]
         public string Type { get; set; }
-
-        [ForeignKey("ID")]
-        public virtual PostTag PostTag { get; set; }
-
-        public virtual IEnumerable<ProductTag> ProductTags { get; set; }
     }
 }
